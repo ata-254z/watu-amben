@@ -1,0 +1,375 @@
+/* Animasi sederhana */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animasi tulisan berkedip */
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+    50% {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 255, 255, 0.8);
+    }
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar yang lebih menarik */
+.navbar {
+    padding: 15px 0;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.2) !important;
+    position: fixed !important;
+    top: 0 !important;
+    width: 100% !important;
+    z-index: 1;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #9ebc8a !important;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: #D2D0A0 !important;
+    transform: scale(1.05);
+}
+
+.navbar-brand img {
+    height: 45px;
+    margin-right: 12px;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    color: #D2D0A0 !important;
+    margin: 0 8px;
+    padding: 10px 20px !important;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navbar-nav .nav-link:hover {
+    background: linear-gradient(45deg, #9EBC8A, #537D5D);
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(111, 78, 55, 0.3);
+}
+
+.navbar-nav .nav-link.active {
+    background: linear-gradient(45deg, #9EBC8A, #537D5D);
+    color: white !important;
+    box-shadow: 0 3px 10px rgba(111, 78, 55, 0.4);
+}
+
+/* Efek garis bawah pada hover 
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 5px;
+    left: 50%;
+    background: #6f4e37;
+    transition: all 0.3s ease;
+}*/
+
+.navbar-nav .nav-link:hover::after {
+    width: 80%;
+    left: 10%;
+}
+
+.navbar-nav .nav-link.active::after {
+    width: 0;
+}
+
+/* Tombol toggle yang lebih menarik */
+.navbar-toggler {
+    border: 2px solid #6f4e37;
+    border-radius: 10px;
+    padding: 8px 12px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(111, 78, 55, 0.25);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%236f4e37' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='m4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Logo text styling */
+.brand-text {
+    background: linear-gradient(45deg, #6f4e37, #8b5d3b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Hero Section dengan overlay gelap */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url('watu-amben-1024x675-1024x530.jpg') no-repeat center center;
+    background-size: cover;
+    height: 100dvh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content {
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-section h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
+    /*text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9), 0 0 30px rgba(255, 255, 255, 0.3);*/
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    /*animation: glow 3s ease-in-out infinite;*/
+    background: linear-gradient(45deg, #ffffff, #f0f0f0, #ffffff);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-section p {
+    font-size: 1.4rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+/* Badge kualitas lebih mencolok */
+.quality-badge {
+    background: linear-gradient(45deg, #ffd700, #ffed4e);
+    color: #4a2c2a;
+    padding: 12px 25px;
+    border-radius: 30px;
+    display: inline-block;
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive navbar */
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 20px;
+        border-radius: 15px;
+        margin-top: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-nav .nav-link {
+        margin: 5px 0;
+        text-align: center;
+    }
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: bold;
+    color: #4a2c2a;
+    position: relative;
+}
+
+/* Garis dekoratif di bawah judul */
+.section-title::after {
+    content: '';
+    width: 80px;
+    height: 3px;
+    background: #6f4e37;
+    display: block;
+    margin: 15px auto;
+}
+
+/* Kartu menu dengan efek hover */
+.card {
+    transition: transform 0.3s ease;
+    border: none;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+/* Badge harga */
+.price-badge {
+    background: #6f4e37;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Statistik */
+.stats-section {
+    background: linear-gradient(135deg, #6f4e37, #8b5d3b);
+    color: white;
+    padding: 60px 0;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 20px;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: bold;
+    display: block;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+.contact-section {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+}
+
+/* Form dengan border radius */
+.form-control {
+    border-radius: 10px;
+    border: 2px solid #e9ecef;
+    padding: 12px 15px;
+}
+
+.form-control:focus {
+    border-color: #6f4e37;
+    box-shadow: 0 0 0 0.2rem rgba(111, 78, 55, 0.25);
+}
+
+.footer {
+    background-color: #343a40;
+    color: white;
+    padding: 40px 0;
+}
+
+.footer a {
+    color: #adb5bd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: white;
+}
+
+.map-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+    border-radius: 15px;
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
+    color: #4a2c2a;
+}
+
+.custom-btn {
+    background-color: #537D5D !important;
+    border-color: #537D5D;
+    color: white !important;
+    border-radius: 25px;
+    padding: 12px 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.custom-btn:hover {
+    background-color: #9EBC8A;
+    border-color: #9EBC8A;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Social media icons */
+.social-icon {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    background: #6f4e37;
+    color: white;
+    transition: all 0.3s ease;
+    margin: 0 10px;
+}
+
+.social-icon:hover {
+    background: white;
+    color: #6f4e37;
+    transform: translateY(-3px);
+}
+
+/* Testimonial section */
+.testimonial-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+}
+
+.testimonial-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    object-fit: cover;
+}
